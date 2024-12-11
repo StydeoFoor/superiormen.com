@@ -54,21 +54,21 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== Dark Mode Functions =====
   function applyDarkMode() {
     if (sunButton) sunButton.textContent = "🌙";
-    body.style.backgroundColor = "#303030";
+    body.style.backgroundColor = "#2d5f29";
     body.style.color = "white";
 
     body.querySelectorAll("a").forEach((a) => {
       a.style.color = "white";
     });
 
-    if (topbar) topbar.style.backgroundColor = "#242424";
-    if (sidebar) sidebar.style.backgroundColor = "#242424";
+    if (topbar) topbar.style.backgroundColor = "#044100";
+    if (sidebar) sidebar.style.backgroundColor = "#044100";
 
     body.querySelectorAll("p, h1, h2, h3").forEach((el) => {
       if (el && !el.classList.contains("exclude-dark-mode")) {
         el.style.color =
           el.tagName === "H3"
-            ? "white"
+            ? "red"
             : el.tagName === "H1" || el.tagName === "H2"
               ? "white"
               : "white";
@@ -86,15 +86,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function applyLightMode() {
     if (sunButton) sunButton.textContent = "☀️";
-    body.style.backgroundColor = "#f4f4f9";
+    body.style.backgroundColor = "#7fff76";
     body.style.color = "black";
 
     body.querySelectorAll("a").forEach((a) => {
       a.style.color = "black";
     });
 
-    if (topbar) topbar.style.backgroundColor = "#c2c2c2";
-    if (sidebar) sidebar.style.backgroundColor = "#c2c2c2";
+    if (topbar) topbar.style.backgroundColor = "#5eff52";
+    if (sidebar) sidebar.style.backgroundColor = "#5eff52";
 
     // Check if elements exist before modifying their styles
 
