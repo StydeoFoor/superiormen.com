@@ -52,6 +52,11 @@ function sendMessage(message) {
     });
 }
 
+if (!loggedInUser && !window.location.pathname.includes("login.html")) {
+  window.location.href = "login.html";
+  return;
+}
+
 // Fetch and display messages using 'get'
 function fetchMessages() {
   const messagesRef = ref(database, "adminChats/"); // Reference to your 'chats' node

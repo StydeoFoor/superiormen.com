@@ -18,12 +18,19 @@ const firebaseConfig = {
   appId: "1:511878136688:web:c316363351d7a4791f45b5"
 };
 
+
+
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app); // Get Firebase Database instance
 
+if (!loggedInUser && !window.location.pathname.includes("login.html")) {
+  window.location.href = "login.html";
+  return;
+}
+
 // Send message function using 'set'
-const bannedWords = ["fuck", "nigga", "nigger", "ass", "shit", "skibidi", "sigma",]; // Replace with your words
+function _0x19ae(){const _0x37dc4b=['762620RUABox','514315GIxaQC','6BvelNl','2594QhdexI','nigger','ass','2186980pARnUa','shit','1492164jBqdeg','38DZBpSD','563382ZOXJJx','1544FIFxTf','skibidi','nigga','sigma','3717YjJCBE'];_0x19ae=function(){return _0x37dc4b;};return _0x19ae();}const _0x5f71e5=_0xba77;function _0xba77(_0x2cfab9,_0x85030c){const _0x19ae0c=_0x19ae();return _0xba77=function(_0xba778f,_0x23ceba){_0xba778f=_0xba778f-0x105;let _0x38d1b4=_0x19ae0c[_0xba778f];return _0x38d1b4;},_0xba77(_0x2cfab9,_0x85030c);}(function(_0x1357c2,_0x58eb11){const _0xad198=_0xba77,_0x190cab=_0x1357c2();while(!![]){try{const _0x3d5dd0=-parseInt(_0xad198(0x109))/0x1*(parseInt(_0xad198(0x10f))/0x2)+-parseInt(_0xad198(0x110))/0x3+parseInt(_0xad198(0x106))/0x4+parseInt(_0xad198(0x107))/0x5*(-parseInt(_0xad198(0x108))/0x6)+-parseInt(_0xad198(0x105))/0x7*(parseInt(_0xad198(0x111))/0x8)+parseInt(_0xad198(0x10e))/0x9+parseInt(_0xad198(0x10c))/0xa;if(_0x3d5dd0===_0x58eb11)break;else _0x190cab['push'](_0x190cab['shift']());}catch(_0x11687a){_0x190cab['push'](_0x190cab['shift']());}}}(_0x19ae,0x20673));const bannedWords=['fuck',_0x5f71e5(0x113),_0x5f71e5(0x10a),_0x5f71e5(0x10b),_0x5f71e5(0x10d),_0x5f71e5(0x112),_0x5f71e5(0x114)]; // Replace with your words
 
 function containsBannedWords(message) {
   // Check if the message contains any banned words (case-insensitive)
